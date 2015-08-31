@@ -1,3 +1,4 @@
+{% raw %}
 # LFE Reference Guide
 
 
@@ -13,3 +14,5 @@ is a conversion of Robert Virding's
 You will see code blocks in this book surrounded by double curly braces,  
 ``{{ ... }}``. This typographic convention is used to denote *optional* 
 syntax.
+
+{% endraw %}
