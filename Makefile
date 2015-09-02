@@ -8,6 +8,8 @@ PROD_PATH=$(BASE_DIR)/$(PROD_DIR)
 STAGE_DIR=$(PROD_DIR)
 STAGE_PATH=$(BASE_DIR)/$(STAGE_DIR)
 
+default: build
+
 setup:
 	sudo npm install gitbook-cli -g
 	sudo npm install gitbook-plugin-ga -g
