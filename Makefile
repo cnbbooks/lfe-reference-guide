@@ -13,6 +13,7 @@ setup:
 	sudo npm install gitbook-plugin-ga -g
 
 build:
+	-mkdir -p $(PROD_DIR)
 	gitbook build $(SRC) --output=$(PROD_DIR)
 
 run:
