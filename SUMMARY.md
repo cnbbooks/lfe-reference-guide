@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Special syntactic rules](01.md)
+* [Literals and Special Syntactic Rules](01.md)
 * [Supported Core forms](02.md)
 * [Supported macro forms](03.md)
 * [Common Lisp inspired macros](04.md)
