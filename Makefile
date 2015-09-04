@@ -8,11 +8,29 @@ PROD_PATH=$(BASE_DIR)/$(PROD_DIR)
 STAGE_DIR=$(PROD_DIR)
 STAGE_PATH=$(BASE_DIR)/$(STAGE_DIR)
 
+OS := $(shell uname -s)
+ifeq ($(OS),Linux)
+	NPM_INSTALL=sudo apt-get install npm
+	NPM=/usr/local/bin/npm
+	NPM_CMD=sudo $(NPM)
+	GB_CMD=sudo gitbook
+endif
+ifeq ($(OS),Darwin)
+	NPM_INSTALL=brew install npm
+	NPM=/usr/local/bin/npm
+	NPM_CMD=npm
+	GB_CMD=gitbook
+endif
+
 default: build
 
-setup:
-	sudo npm install gitbook-cli -g
-	sudo npm install gitbook-plugin-ga -g
+$(NPM):
+	$(NPM_INSTALL)
+
+setup: $(NPM)
+	$(NPM_CMD) install gitbook-cli -g
+	$(NPM_CMD) install gitbook-plugin-ga -g
+	$(GB_CMD) install
 
 build:
 	-mkdir -p $(PROD_DIR)
