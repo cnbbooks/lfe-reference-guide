@@ -1,6 +1,7 @@
 {
     "title": "LFE Reference Guide",
     "description": "The original LFE User Guide",
+    "gitbook": "2.x.x",
     "plugins": ["ga"],
     "pluginsConfig": {
         "fontSettings": {
