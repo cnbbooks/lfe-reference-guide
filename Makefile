@@ -47,3 +47,12 @@ publish: build
 	-git commit -a && git push origin master
 	git subtree push --prefix $(PROD_DIR) origin gh-pages
 
+push-mirror:
+	git push gitlab --all
+	git push gitlab --tags
+
+push-main:
+	git push origin --all
+	git push origin --tags
+
+push: push-mirror push-main
